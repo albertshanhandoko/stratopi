@@ -1,0 +1,35 @@
+SETUP STRATO PI
+1. Download and install Raspberry Pi imager
+https://www.raspberrypi.org/software/
+2. Plug SD Card to PC
+3. Run Raspberry Pi Imager
+4. Choose Recomended OS
+5. Choose designated SD Card
+6. Write
+7. Unplug SD Card, Plug it to Strato Pi
+8. Power Up Strato Pi
+9. Plug in HDMI Cable, keyboard, and mouse
+10. Enable SSH
+11. Connect to the Internet via Wi-Fi/LAN
+12. Reboot
+ENABLE SERIAL PORT
+14. sudo raspi-config
+15. Choose Interface Options
+16. Choose Serial Port
+17. Would you like a login shell to be accessible over serial? No
+18. Would you like the serial port hardware to be enabled? Yes
+19. sudo nano /boot/config.txt
+20. ADD These line
+# Disable Bluetooth 
+dtoverlay=pi3-disable-bt 
+21. sudo systemctl disable hciuart
+22. sudo systemctl disable serial-getty@ttyAMA0.service
+23. sudo nano /boot/cmdline.txt
+24. DELETE These line
+console=serial0,115200
+INSTALL TELEGRAF
+25. sudo apt-get update && sudo apt-get install apt-transport-https
+26. wget -qO- https://repos.influxdata.com/influxdb.key | sudo apt-key add -
+27. source /etc/os-release
+28. sudo apt-get update && sudo apt-get install telegraf
+29. sudo service telegraf start

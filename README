@@ -12,6 +12,7 @@ https://www.raspberrypi.org/software/
 10. Enable SSH
 11. Connect to the Internet via Wi-Fi/LAN
 12. Reboot
+
 ENABLE SERIAL PORT
 14. sudo raspi-config
 15. Choose Interface Options
@@ -27,6 +28,7 @@ dtoverlay=pi3-disable-bt
 23. sudo nano /boot/cmdline.txt
 24. DELETE These line
 console=serial0,115200
+
 INSTALL TELEGRAF
 25. sudo apt-get update && sudo apt-get install apt-transport-https
 26. wget -qO- https://repos.influxdata.com/influxdb.key | sudo apt-key add -

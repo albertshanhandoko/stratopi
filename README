@@ -49,10 +49,10 @@ INSTALL TELEGRAF
 - cp telegraf.conf /home/pi/telegraf_configuration/stratopi/backup
 6. Copy and rename new configuration file
 - cd /home/pi/telegraf_configuration/stratopi
-- cp GOP6.txt /etc/telegraf
+- cp telegraf.txt /etc/telegraf
 - cd /etc/telegraf
 - rm telegraf.conf
-- mv GOP6.txt telegraf.conf
+- mv telegraf.txt telegraf.conf
 - reboot
 
 *Configuration Files Directory*

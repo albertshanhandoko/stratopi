@@ -30,12 +30,9 @@ dtoverlay=pi3-disable-bt
 console=serial0,115200
 
 INSTALL TELEGRAF
-1. curl -sL https://repos.influxdata.com/influxdb.key | sudo apt-key add -
-2. echo "deb https://repos.influxdata.com/debian buster stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
-3. sudo apt-get update
-4. sudo apt-get install -y influxdb telegraf
-5. sudo systemctl enable influxdb telegraf
-6. sudo systemctl start influxdb telegraf
+1. wget https://dl.influxdata.com/telegraf/releases/telegraf-1.17.0_linux_armhf.deb 
+2. sudo dpkg -i telegraf-1.17.0_linux_armhf.deb
+6. sudo systemctl start telegraf
 
 *Cara download dan setup configuration file dari github*
 1. Create Folder in root
@@ -44,14 +41,14 @@ INSTALL TELEGRAF
 2. Make it git repository
 - git init
 3. Clone telegraf configuration from github
-- git clone https://github.com/albertshanhandoko/SUN.git
+- git clone https://github.com/albertshanhandoko/stratopi.git
 4. Create backup folder for existing configuration*
 - mkdir backup
 5. Copy existing configuration to backup folder
 - cd /etc/telegraf
-- cp telegraf.conf /home/pi/telegraf_configuration/SUN/backup
+- cp telegraf.conf /home/pi/telegraf_configuration/stratopi/backup
 6. Copy and rename new configuration file
-- cd /home/pi/telegraf_configuration/SUN
+- cd /home/pi/telegraf_configuration/stratopi
 - cp GOP6.txt /etc/telegraf
 - cd /etc/telegraf
 - rm telegraf.conf

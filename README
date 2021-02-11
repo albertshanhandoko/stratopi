@@ -31,6 +31,8 @@ console=serial0,115200
 
 INSTALL TELEGRAF
 1. wget https://dl.influxdata.com/telegraf/releases/telegraf-1.17.0_linux_armhf.deb 
+2. wget https://dl.influxdata.com/influxdb/releases/influxdb_1.8.4_armhf.deb
+3. sudo dpkg -i influxdb_1.8.4_armhf.deb
 2. sudo dpkg -i telegraf-1.17.0_linux_armhf.deb
 6. sudo systemctl start telegraf
 
